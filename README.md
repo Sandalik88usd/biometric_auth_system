@@ -33,8 +33,6 @@
 
 Після успішної біометричної верифікації отримує доступ до службових матеріалів, що містять інформацію про:
 
-- БПЛА
-- НРК
 - робототехнічні системи
 - технічну документацію
 - результати досліджень
@@ -182,8 +180,6 @@ Has access to public information resources.
 
 After successful biometric verification gains access to restricted resources related to:
 
-- UAVs
-- UGVs
 - robotic systems
 - technical documentation
 - research materials
