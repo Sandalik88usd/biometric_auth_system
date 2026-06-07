@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Вхід у систему</h2>
+
+<input id="loginEmail" type="email" placeholder="Email">
+
+<div class="password-box">
+    <input id="loginPassword" type="password" placeholder="Пароль">
+    <button type="button" onclick="togglePassword('loginPassword')">👁</button>
+</div>
+
+<button class="btn" onclick="loginUser()">Увійти</button>
+
+<p id="loginMessage"></p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

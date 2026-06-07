@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    color: #222;
+}
+
+.container {
+    width: 420px;
+    margin: 100px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.container.wide {
+    width: 700px;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+input {
+    display: block;
+    width: 90%;
+    margin: 12px auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn.secondary {
+    background: #475569;
+}
+
+.card {
+    text-align: left;
+    background: #f8fafc;
+    margin: 15px 0;
+    padding: 18px;
+    border-radius: 10px;
+    border-left: 5px solid #2563eb;
+}
+
+a {
+    color: #2563eb;
+}
+
+.password-box {
+    position: relative;
+    width: 90%;
+    margin: 12px auto;
+}
+
+.password-box input {
+    width: 100%;
+    margin: 0;
+    padding: 12px 45px 12px 12px;
+}
+
+.password-box button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+video {
+    width: 500px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+canvas {
+    display: none;
+}
+
+video {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+canvas {
+    display: none;
+}
+
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e2e8f0;
+}
+
+.message-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.message-success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.message-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.topbar {
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.user-info {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logout-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+.camera-wrapper {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.camera-wrapper video {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.face-frame {
+    position: absolute;
+    width: 230px;
+    height: 280px;
+    border: 3px solid #22c55e;
+    border-radius: 50% / 42%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.8);
+    pointer-events: none;
+    display: none;
+}
+
+.face-frame span {
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #22c55e;
+    font-weight: bold;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+#canvas {
+    display: none;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+.history-table th,
+.history-table td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+}
+
+.history-table th {
+    background: #0f172a;
+    color: white;
+}
+
+.history-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.locked {
+    filter: blur(7px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.resource-overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #0f172a;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 480px;
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін-панель</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="user-info">
+        <span id="currentUsername"></span>
+    </div>
+
+    <button class="logout-btn" onclick="logoutUser()">Вийти</button>
+</div>
+
+<div class="container wide">
+    <h2>Адмін-панель</h2>
+
+    <h3>Користувачі системи</h3>
+    <div id="usersList"></div>
+
+    <hr>
+
+    <h3>Додати інформаційний ресурс</h3>
+
+    <input id="resourceTitle" type="text" placeholder="Назва ресурсу">
+    <input id="resourceDescription" type="text" placeholder="Опис ресурсу">
+    <input id="resourceType" type="text" placeholder="Тип ресурсу (website, document)">
+    <input id="resourcePath" type="text" placeholder="Посилання або шлях">
+    <select id="resourceCategory">
+        <option value="">Оберіть категорію</option>
+    </select>
+
+    <select id="resourceRole">
+        <option value="user">Користувач</option>
+        <option value="special_user">Спец-користувач</option>
+        <option value="admin">Адміністратор</option>
+    </select>
+
+    <select id="resourceAccessLevel">
+        <option value="public">Загальний ресурс</option>
+        <option value="special">Службовий ресурс</option>
+        <option value="admin">Адмін-ресурс</option>
+    </select>
+
+    <button class="btn" onclick="addResource()">Додати ресурс</button>
+
+    <p id="adminMessage"></p>
+
+    <hr>
+
+    <h3>Список інформаційних ресурсів</h3>
+
+    <div id="adminResourcesList"></div>
+</div>
+
+<script src="/static/script.js"></script>
+
+<script>
+    loadCurrentUser();
+    checkAdminAccess();
+    loadUsers();
+    loadAdminResources();
+    loadCategories();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Біометрична перевірка</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="user-info">
+        <span id="currentUsername"></span>
+    </div>
+
+    <button class="logout-btn" onclick="logoutUser()">
+        Вийти
+    </button>
+</div>
+
+<div class="container wide">
+
+    <h2>Біометрична автентифікація</h2>
+
+    <p>
+        Налаштування та перевірка обличчя виконуються через камеру.
+    </p>
+
+    <hr>
+
+    <div class="dashboard-layout">
+
+        <div class="camera-panel">
+            <div class="camera-wrapper">
+                <video id="video" autoplay playsinline></video>
+
+                <canvas id="faceMeshCanvas"></canvas>
+
+                <div class="face-frame" id="faceFrame">
+                    <span>Розмістіть обличчя в рамці</span>
+                </div>
+            </div>
+
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls-panel">
+
+            <div class="card-block">
+                <h3>Камера</h3>
+
+                <button class="btn full-width" onclick="startCamera()">
+                    Увімкнути камеру
+                </button>
+            </div>
+
+            <div class="card-block">
+                <h3>Створення біометричного шаблону</h3>
+
+                <p>
+                    Шаблон створюється з декількох кадрів обличчя.
+                    Для кращої якості дивіться прямо в камеру.
+                </p>
+
+                <div class="pose-section">
+                    <label class="section-label">
+                        Режим збереження шаблону
+                    </label>
+
+                    <select id="embeddingMode" class="styled-select">
+                        <option value="append">
+                            Додати новий шаблон
+                        </option>
+
+                        <option value="replace">
+                            Перезаписати біометричний шаблон
+                        </option>
+                    </select>
+                </div>
+
+                <button
+                    class="btn full-width"
+                    id="createFrontBtn"
+                    onclick="autoCaptureFacePhotos('front')"
+                >
+                    📷 Створити біометричний шаблон
+                </button>
+
+                <p>Зроблено фото: <span id="capturedCount">0</span></p>
+
+                <div id="faceUploadMessage" class="message-box"></div>
+            </div>
+
+            <div class="card-block">
+                <h3>Перевірка живої присутності</h3>
+
+                <div
+                    id="livenessBlock"
+                    class="message-box message-success"
+                >
+                    <p id="livenessMessage">
+                        Для доступу до захищених функцій необхідно пройти перевірку живої присутності.
+                    </p>
+
+                    <button class="btn full-width" onclick="startLivenessCheck()">
+                        Почати перевірку живої присутності
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-block">
+                <h3>Біометрична перевірка</h3>
+
+                <button
+                    class="btn secondary full-width"
+                    id="verifyFaceButton"
+                    onclick="captureAndAuthenticateUser()"
+                >
+                    Перевірити обличчя
+                </button>
+
+                <div class="navigation-buttons vertical-buttons">
+
+                    <button
+                        class="btn admin-btn full-width"
+                        id="adminPanelButton"
+                        onclick="goToAdminPanel()"
+                    >
+                        Адмін-панель
+                    </button>
+
+                    <button
+                        class="btn secondary full-width"
+                        onclick="goToResources()"
+                    >
+                        Перейти до ресурсів
+                    </button>
+
+                </div>
+
+                <p id="authMessage"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/mediapipe/face_mesh.js"></script>
+<script src="/static/mediapipe/camera_utils.js"></script>
+<script src="/static/mediapipe/drawing_utils.js"></script>
+
+<script src="/static/script.js"></script>
+
+<script>
+    loadCurrentUser();
+    checkDashboardAccess();
+    setupLivenessBlock();
+    setupAdminButton();
+    loadPoseStatus();
+</script>
+
+</body>
+</html>

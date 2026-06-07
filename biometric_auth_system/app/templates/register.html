@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Реєстрація користувача</h2>
+
+        <input id="regUsername" type="text" placeholder="Ім'я користувача">
+<input id="regEmail" type="email" placeholder="Email">
+
+<div class="password-box">
+    <input id="regPassword" type="password" placeholder="Пароль">
+    <button type="button" onclick="togglePassword('regPassword')">👁</button>
+</div>
+
+<div class="password-box">
+    <input id="regPasswordRepeat" type="password" placeholder="Повторіть пароль">
+    <button type="button" onclick="togglePassword('regPasswordRepeat')">👁</button>
+</div>
+
+<button class="btn" onclick="registerUser()">Зареєструватися</button>
+
+<p id="registerMessage"></p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

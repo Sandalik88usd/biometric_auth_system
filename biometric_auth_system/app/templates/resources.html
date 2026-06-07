@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Ресурси робототехніки</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="user-info">
+        <span id="currentUsername"></span>
+    </div>
+
+    <button class="logout-btn" onclick="logoutUser()">
+        Вийти
+    </button>
+</div>
+
+<div id="resourceOverlay" class="resource-overlay">
+    🔒 Для доступу до ресурсів необхідно пройти біометричну автентифікацію
+    <br><br>
+    <button class="btn" onclick="window.location.href='/dashboard'">
+        Перейти до верифікації
+    </button>
+</div>
+
+<div id="resourcesContent" class="container wide locked">
+    <h2>Інформаційні ресурси з робототехніки</h2>
+
+    <div id="resourcesList"></div>
+
+    <hr>
+
+    <h3>Популярні GitHub-проєкти з робототехніки</h3>
+
+    <p>
+        Нижче відображаються відкриті репозиторії GitHub,
+        пов’язані з робототехнікою, ROS, комп’ютерним зором та AI.
+    </p>
+
+    <div class="github-search-box">
+    <input
+        id="githubSearchInput"
+        type="text"
+        placeholder="Наприклад: ROS2, drone, computer vision, robot arm"
+    >
+
+    <button class="btn" onclick="searchGitHubProjects()">
+        Знайти
+    </button>
+
+    <button class="btn secondary" onclick="loadGitHubRoboticsProjects()">
+        Найпопулярніші
+    </button>
+</div>
+
+    <div id="githubProjects"></div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+<script>
+    loadCurrentUser();
+    checkFaceVerificationForResources();
+    loadResources();
+    loadGitHubRoboticsProjects();
+</script>
+
+</body>
+</html>
